@@ -1,0 +1,511 @@
+{
+  "brand": {
+    "name": "AIC Travel",
+    "partner": "SoHolidays",
+    "partnership": "En partenariat avec SoHolidays",
+    "partnerRole": "Partenaire touristique officiel"
+  },
+  "nav": {
+    "home": "Accueil",
+    "tours": "Circuits",
+    "tailorMade": "Circuits sur mesure",
+    "destinations": "Destinations",
+    "transfers": "Transferts",
+    "about": "À propos",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "transfers": {
+    "title": "Transferts privés",
+    "metaDescription": "Réservez un transfert privé aéroport ou hôtel à Hurghada et sur la mer Rouge. Prix fixes par véhicule, flotte moderne, demande en quelques minutes — sans paiement en ligne.",
+    "subtitle": "Transferts privés confortables entre aéroports, hôtels et stations — prix fixes par véhicule, confirmés personnellement par notre équipe.",
+    "formTitle": "Demander un transfert",
+    "formSubtitle": "Choisissez votre trajet et votre véhicule — nous confirmons personnellement la disponibilité et la prise en charge.",
+    "from": "Prise en charge",
+    "to": "Destination",
+    "vehicle": "Véhicule",
+    "seats": "places",
+    "passengers": "Passagers",
+    "pickupDate": "Date de prise en charge",
+    "notes": "Remarques",
+    "notesPlaceholder": "Numéro de vol, nom de l'hôtel, heure d'arrivée…",
+    "selectOption": "Sélectionner…",
+    "price": "Prix du transfert",
+    "priceNote": "Par véhicule, et non par personne.",
+    "priceOnRequest": "Prix sur demande",
+    "submit": "Demander le transfert",
+    "invalidPickupDate": "Choisissez une date valide — aujourd'hui ou plus tard.",
+    "sameLocations": "Le départ et la destination doivent être différents.",
+    "routeUnavailable": "Ce trajet n'est plus disponible — choisissez une autre option ou contactez-nous sur WhatsApp.",
+    "successTitle": "Demande de transfert reçue.",
+    "successBody": "Notre équipe vous contactera rapidement pour confirmer l'heure de prise en charge, le point de rencontre et le paiement.",
+    "point1Title": "Porte à porte",
+    "point1Body": "Votre chauffeur vous accueille à l'aéroport ou à l'hôtel et vous conduit directement à destination — sans détours ni attente.",
+    "point2Title": "Prix fixes",
+    "point2Body": "Des prix transparents par véhicule, fixés à l'avance — pas de frais cachés, pas de surprises.",
+    "point3Title": "Flotte moderne",
+    "point3Body": "Des véhicules climatisés et bien entretenus de toutes tailles — de la voiture privée au grand bus."
+  },
+  "tailorMade": {
+    "title": "Circuits sur mesure",
+    "metaDescription": "Composez votre propre itinéraire privé en Égypte. Confiez à AIC Travel vos envies, votre rythme et votre budget et recevez un plan de voyage personnalisé — sans paiement en ligne, sans engagement.",
+    "lead": "Votre voyage, à votre façon. Dites-nous ce que vous aimez et nous créerons un itinéraire personnalisé, rien que pour vous : des sites incontournables aux trésors cachés, adapté à vos centres d'intérêt, à votre rythme et à votre budget.",
+    "formTitle": "Composez votre voyage",
+    "formSubtitle": "Indiquez-nous vos coordonnées et vos idées — un conseiller voyage vous répond avec un plan personnalisé.",
+    "styleLabel": "Qui voyage ?",
+    "styles": {
+      "solo": "En solo",
+      "couple": "En couple",
+      "family": "En famille",
+      "group": "En groupe"
+    },
+    "durationLabel": "Durée",
+    "durationAny": "Pas encore décidé",
+    "durationDay": "jour",
+    "durationDays": "jours",
+    "duration15Plus": "15 jours et plus",
+    "tripLabel": "Décrivez votre voyage idéal",
+    "tripPlaceholder": "Les sites dont vous rêvez, les activités que vous aimez, votre rythme, votre budget — tout ce qui nous aide à composer votre voyage.",
+    "successNote": "Demande de circuit sur mesure"
+  },
+  "actions": {
+    "requestBooking": "Demander une réservation",
+    "contactWhatsApp": "Contacter via WhatsApp",
+    "explore": "Découvrir les circuits",
+    "viewAllTours": "Voir tous les circuits",
+    "allDestinations": "Toutes les destinations",
+    "readBlog": "Lire le blog",
+    "clearFilters": "Effacer les filtres",
+    "submit": "Envoyer la demande"
+  },
+  "home": {
+    "heroTitle": "Découvrez l'Égypte, une sélection réfléchie.",
+    "heroSubtitle": "Des voyages sur mesure le long du Nil et à travers Le Caire, Louxor et la mer Rouge — envoyez une demande de réservation et notre équipe personnalise chaque détail.",
+    "ctaExplore": "Découvrir les circuits"
+  },
+  "homeExtra": {
+    "heroEyebrow": "Égypte · Voyages d'exception",
+    "heroSearch": "Rechercher une destination ou un circuit",
+    "search": "Rechercher",
+    "featuredEyebrow": "Sélection",
+    "exploreAll": "Tout explorer",
+    "toursSuffix": "circuits",
+    "heroPrev": "Bannière précédente",
+    "heroNext": "Bannière suivante",
+    "heroGoto": "Aller à la bannière"
+  },
+  "tourCard": {
+    "from": "à partir de",
+    "perPerson": "par personne",
+    "originalPrice": "Prix initial",
+    "percentOff": "{percent} % de réduction",
+    "days": "jours",
+    "dayOne": "jour",
+    "dayTwo": "jours",
+    "dayFew": "jours",
+    "dayMany": "jours",
+    "viewDetails": "Voir les détails",
+    "rating": "Noté {rating} sur 5 d'après {count} avis"
+  },
+  "reviews": {
+    "title": "Avis des voyageurs",
+    "countOne": "{count} avis",
+    "countMany": "{count} avis",
+    "ratingOutOf": "{rating} sur 5",
+    "travelledIn": "A voyagé en {date}",
+    "starOne": "{count} étoile",
+    "starMany": "{count} étoiles",
+    "featuredHeading": "Ce que disent nos voyageurs"
+  },
+  "whyUs": {
+    "points": [
+      {
+        "title": "Expertise locale",
+        "body": "Des guides égyptologues et une équipe qui connaît chaque site de première main."
+      },
+      {
+        "title": "Des prix transparents",
+        "body": "Des devis clairs, sans frais cachés — vous validez chaque détail avant de partir."
+      },
+      {
+        "title": "Toujours joignables",
+        "body": "Une assistance par WhatsApp et par téléphone avant, pendant et après votre voyage."
+      },
+      {
+        "title": "Sept langues",
+        "body": "EN, AR, DE, RU, FR, IT, TR — avec une prise en charge complète de l'écriture de droite à gauche."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Des voyages d'exception soigneusement composés à travers l'Égypte.",
+    "explore": "Explorer",
+    "company": "Entreprise",
+    "talk": "Parlez-nous",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions générales",
+    "rights": "Tous droits réservés."
+  },
+  "social": {
+    "followUs": "Suivez-nous"
+  },
+  "catalog": {
+    "title": "Circuits",
+    "heading": "Circuits et expériences en Égypte",
+    "searchPlaceholder": "Rechercher un circuit ou une destination",
+    "search": "Rechercher",
+    "filters": "Filtres",
+    "category": "Catégorie",
+    "destination": "Destination",
+    "type": "Type de circuit",
+    "duration": "Durée",
+    "price": "Fourchette de prix",
+    "suitability": "Idéal pour",
+    "family": "Familles",
+    "couple": "Couples",
+    "solo": "Voyageurs solo",
+    "any": "Tous",
+    "sort": "Trier par",
+    "sortFeatured": "En vedette",
+    "sortPopular": "Les plus populaires",
+    "sortPriceAsc": "Prix : croissant",
+    "sortPriceDesc": "Prix : décroissant",
+    "sortDuration": "Durée",
+    "clear": "Effacer les filtres",
+    "resultsOne": "circuit",
+    "resultsMany": "circuits",
+    "noResultsTitle": "Aucun circuit ne correspond à vos filtres",
+    "noResultsBody": "Élargissez votre recherche ou effacez certains filtres.",
+    "durationDay": "Excursion à la journée",
+    "durationShort": "2–3 jours",
+    "durationWeek": "4–7 jours",
+    "durationLong": "8+ jours",
+    "minPrice": "Min",
+    "maxPrice": "Max",
+    "pagePrev": "Précédent",
+    "pageNext": "Suivant",
+    "pageStatus": "Page {current} sur {total}",
+    "showMore": "Afficher plus",
+    "showLess": "Afficher moins"
+  },
+  "detail": {
+    "overview": "Aperçu",
+    "itinerary": "Itinéraire",
+    "included": "Ce qui est inclus",
+    "excluded": "Non inclus",
+    "faq": "Questions fréquentes",
+    "related": "Vous pourriez aussi aimer",
+    "duration": "Durée",
+    "tourType": "Type de circuit",
+    "goodFor": "Idéal pour",
+    "from": "à partir de",
+    "days": "jours",
+    "dayOne": "jour",
+    "dayTwo": "jours",
+    "dayFew": "jours",
+    "dayMany": "jours",
+    "perPerson": "par personne",
+    "originalPrice": "Prix initial",
+    "percentOff": "{percent} % de réduction",
+    "noPayment": "Aucun paiement maintenant · nous confirmons d'abord la disponibilité",
+    "reviews": "avis",
+    "backToTours": "Tous les circuits",
+    "highlights": "Points forts",
+    "quickFacts": "L'essentiel",
+    "pickup": "Prise en charge",
+    "languages": "Langues",
+    "cancellation": "Annulation",
+    "pickupOptions": {
+      "HOTEL_INCLUDED": "Prise en charge à l'hôtel incluse",
+      "AIRPORT_AVAILABLE": "Prise en charge à l'aéroport disponible",
+      "MEETING_POINT": "Rendez-vous au point de départ",
+      "NOT_INCLUDED": "Prise en charge non incluse"
+    },
+    "cancellationOptions": {
+      "FREE_24H": "Annulation gratuite jusqu'à 24 heures avant",
+      "FREE_48H": "Annulation gratuite jusqu'à 48 heures avant",
+      "FREE_72H": "Annulation gratuite jusqu'à 72 heures avant",
+      "NON_REFUNDABLE": "Non remboursable"
+    },
+    "gallery": {
+      "title": "Galerie photos",
+      "viewAll": "Voir toutes les photos",
+      "photos": "photos",
+      "open": "Ouvrir en plein écran",
+      "close": "Fermer",
+      "previous": "Photo précédente",
+      "next": "Photo suivante"
+    }
+  },
+  "booking": {
+    "title": "Demander ce circuit",
+    "subtitle": "Communiquez-nous vos informations et notre équipe confirmera la disponibilité et le prix.",
+    "fullName": "Nom complet",
+    "email": "E-mail",
+    "phone": "Numéro de téléphone",
+    "country": "Pays",
+    "date": "Date de voyage souhaitée",
+    "adults": "Adultes",
+    "children": "Enfants",
+    "hotelName": "Nom de l'hôtel",
+    "roomNumber": "Numéro de chambre",
+    "optional": "facultatif",
+    "decrease": "Diminuer",
+    "increase": "Augmenter",
+    "requests": "Demandes particulières",
+    "consent": "J'accepte d'être contacté au sujet de ma demande.",
+    "submit": "Envoyer la demande",
+    "sending": "Envoi…",
+    "successTitle": "Merci pour votre demande.",
+    "successBody": "Notre équipe vous contactera sous peu pour confirmer la disponibilité, le prix et les modalités de paiement.",
+    "required": "Ce champ est obligatoire.",
+    "invalidEmail": "Veuillez saisir une adresse e-mail valide.",
+    "consentRequired": "Veuillez accepter d'être contacté.",
+    "step": "Étape 1 sur 1 · Aucun paiement",
+    "selectedTour": "Circuit sélectionné",
+    "securityNote": "Protégé par un filtre anti-spam · validé en toute sécurité",
+    "reference": "Référence",
+    "backToTours": "Retour aux circuits",
+    "chatNow": "Discutez avec nous maintenant",
+    "challengeLabel": "Je ne suis pas un robot",
+    "challengeVerified": "Vérifié",
+    "challengeError": "La vérification a expiré — veuillez cocher à nouveau la case.",
+    "challengeRequired": "Veuillez confirmer que vous n'êtes pas un robot.",
+    "throttleTitle": "Trop de tentatives",
+    "throttleBody": "Vous avez atteint la limite pour le moment — veuillez patienter avant de réessayer, ou écrivez-nous sur WhatsApp pour une réponse immédiate.",
+    "throttleCountdown": "Vous pourrez réessayer dans",
+    "whatsappFallback": "Écrivez-nous sur WhatsApp",
+    "errorGeneric": "Une erreur s'est produite — votre demande n'a pas été envoyée. Veuillez réessayer.",
+    "invalidDate": "Choisissez une date de voyage valide, aujourd'hui ou plus tard.",
+    "tourUnavailable": "Ce circuit n'est plus disponible. Parcourez nos autres circuits ou contactez-nous sur WhatsApp.",
+    "totalPrice": "Prix total",
+    "originalPrice": "Prix initial",
+    "phoneWhatsAppNote": "Veuillez utiliser un numéro de téléphone actif sur WhatsApp."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Nous sommes là pour vous aider à planifier votre voyage — joignez-nous par le moyen que vous préférez.",
+    "whatsapp": "WhatsApp",
+    "whatsappDesc": "Réponse la plus rapide — discutez avec notre équipe.",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "formTitle": "Envoyez-nous un message",
+    "name": "Nom complet",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "sending": "Envoi…",
+    "successTitle": "Message envoyé.",
+    "successBody": "Merci — notre équipe vous répondra sous un jour ouvré.",
+    "required": "Ce champ est obligatoire.",
+    "invalidEmail": "Veuillez saisir une adresse e-mail valide.",
+    "consent": "J'accepte d'être contacté au sujet de ma demande.",
+    "consentRequired": "Veuillez accepter d'être contacté.",
+    "challengeLabel": "Je ne suis pas un robot",
+    "challengeVerified": "Vérifié",
+    "challengeError": "La vérification a expiré — veuillez cocher à nouveau la case.",
+    "challengeRequired": "Veuillez confirmer que vous n'êtes pas un robot.",
+    "throttleTitle": "Trop de tentatives",
+    "throttleBody": "Vous avez atteint la limite pour le moment — veuillez patienter avant de réessayer, ou écrivez-nous sur WhatsApp pour une réponse immédiate.",
+    "throttleCountdown": "Vous pourrez réessayer dans",
+    "whatsappFallback": "Écrivez-nous sur WhatsApp",
+    "errorGeneric": "Une erreur s'est produite — votre demande n'a pas été envoyée. Veuillez réessayer."
+  },
+  "about": {
+    "title": "À propos d'AIC Travel & SoHolidays",
+    "lead": "Un voyagiste égyptien haut de gamme qui compose des voyages sans hâte, guidés par des experts — en partenariat avec SoHolidays, notre partenaire touristique officiel.",
+    "metaDescription": "AIC Travel est un voyagiste égyptien basé à Hurghada et fondé en 2018, spécialisé dans les circuits sur mesure, les excursions privées et les transferts à travers l'Égypte — en partenariat avec SoHolidays.",
+    "heroAlt": "Colonnes couvertes de hiéroglyphes d'un temple de l'Égypte antique sous le soleil",
+    "storyTitle": "Notre histoire",
+    "storyParagraphs": [
+      "AIC Travel a été fondée en 2018 à Hurghada, sur la côte égyptienne de la mer Rouge. Tout a commencé par une passion simple — partager avec le monde la beauté, la culture et l'histoire de l'Égypte — devenue une équipe qui conçoit circuits sur mesure, excursions privées et transferts dans tout le pays.",
+      "Depuis, nous avons accueilli des voyageurs du monde entier, en les guidant des sables dorés de la mer Rouge aux temples antiques de Louxor, des majestueuses pyramides de Gizeh aux rues colorées du Caire.",
+      "Nous croyons que voyager ne se résume pas à visiter des lieux — c'est créer des souvenirs. Chaque voyage est conçu autour de vos envies, de votre rythme et de votre style, avec des experts du voyage, des guides agréés et des chauffeurs professionnels qui veillent au confort et à la sécurité à chaque étape."
+    ],
+    "servicesTitle": "Ce que nous faisons",
+    "servicesLead": "Un seul partenaire local pour tout le voyage — de la première idée au dernier transfert.",
+    "services": [
+      {
+        "title": "Circuits sur mesure",
+        "body": "Des itinéraires privés conçus autour de vos envies, de votre rythme et de votre budget — des sites incontournables aux trésors cachés."
+      },
+      {
+        "title": "Transferts aéroport",
+        "body": "Prise en charge à l'aéroport, dépose à l'hôtel et liaisons de ville à ville dans toute l'Égypte — aller simple ou aller-retour."
+      },
+      {
+        "title": "Réservation d'hôtels",
+        "body": "Une aide pour choisir et réserver le bon hébergement dans les destinations égyptiennes."
+      },
+      {
+        "title": "Billets d'avion",
+        "body": "Une assistance pour vos billets d'avion, avec des options flexibles pour votre itinéraire."
+      },
+      {
+        "title": "Assistance visa",
+        "body": "Un accompagnement dans les démarches de visa pour l'Égypte et les documents à préparer avant le départ."
+      },
+      {
+        "title": "Cartes SIM",
+        "body": "Des cartes SIM locales avec data et appels, prêtes dès votre arrivée."
+      }
+    ],
+    "whyTitle": "Pourquoi voyager avec nous",
+    "whyLead": "Ce que voyager avec un opérateur local veut vraiment dire.",
+    "why": [
+      {
+        "title": "Basés à Hurghada",
+        "body": "Une équipe locale sur la côte égyptienne de la mer Rouge — nous vivons là où vous voyagez."
+      },
+      {
+        "title": "Guides agréés",
+        "body": "Des visites menées par des guides agréés qui connaissent l'histoire et les sites d'Égypte de première main."
+      },
+      {
+        "title": "Chauffeurs professionnels",
+        "body": "Des véhicules privés confortables — limousine, minibus ou autocar — conduits par des professionnels."
+      },
+      {
+        "title": "Itinéraires sur mesure",
+        "body": "Chaque voyage, personnalisé rien que pour vous."
+      },
+      {
+        "title": "Équipe multilingue",
+        "body": "Nous accompagnons nos hôtes en plusieurs langues — de l'anglais et l'allemand à l'italien et au russe."
+      },
+      {
+        "title": "Assistance 24h/24, 7j/7",
+        "body": "Besoin d'aide ? Notre équipe est joignable à toute heure — avant et pendant votre voyage."
+      }
+    ],
+    "howTitle": "Comment ça marche",
+    "howLead": "Réserver, c'est envoyer une demande, pas passer en caisse — un processus personnel, sans paiement en ligne.",
+    "steps": [
+      {
+        "title": "Envoyez votre demande de voyage",
+        "body": "Choisissez un circuit ou décrivez le voyage dont vous rêvez — cela prend une minute et ne coûte rien."
+      },
+      {
+        "title": "Échangez avec un conseiller voyage",
+        "body": "Une vraie personne vous répond pour passer en revue dates, détails et questions."
+      },
+      {
+        "title": "Recevez votre itinéraire personnalisé",
+        "body": "Nous façonnons le programme autour de vous et confirmons disponibilité et tarifs."
+      },
+      {
+        "title": "Confirmez votre réservation",
+        "body": "Validez le programme final avec votre conseiller — aucun paiement n'est pris en ligne."
+      },
+      {
+        "title": "Profitez de votre voyage",
+        "body": "Rencontrez votre guide et votre chauffeur et découvrez l'Égypte, notre équipe restant joignable tout au long du séjour."
+      }
+    ],
+    "ctaTitle": "Commencez à préparer votre voyage",
+    "ctaBody": "Dites-nous ce que vous rêvez de voir — nous concevons le reste."
+  },
+  "legal": {
+    "privacyTitle": "Politique de confidentialité",
+    "termsTitle": "Conditions générales",
+    "lastUpdated": "Dernière mise à jour",
+    "privacyIntro": "Cette politique explique quelles données personnelles AIC Travel collecte via les formulaires de demande de réservation et de contact, comment elles sont utilisées et conservées, et comment demander leur accès ou leur suppression.",
+    "termsIntro": "Ces conditions régissent votre utilisation du site AIC Travel et du processus de demande de réservation. Les réservations ne sont que des demandes — aucun paiement n'est perçu en ligne en phase 1."
+  },
+  "cookie": {
+    "title": "Nous respectons votre vie privée",
+    "message": "Nous utilisons des cookies pour améliorer votre expérience et mesurer l'audience du site. Les outils d'analyse ne se chargent qu'avec votre consentement.",
+    "accept": "Tout accepter",
+    "reject": "Refuser",
+    "learnMore": "Politique de confidentialité"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "home": "Retour à l'accueil",
+    "tours": "Parcourir les circuits"
+  },
+  "destinationsPage": {
+    "title": "Destinations",
+    "subtitle": "Là où nos voyageurs aiment aller.",
+    "toursIn": "Circuits à",
+    "noTours": "Les circuits pour cette destination arrivent bientôt.",
+    "explore": "Explorer"
+  },
+  "blog": {
+    "title": "Carnet de voyage",
+    "subtitle": "Guides et conseils pour votre voyage en Égypte.",
+    "searchPlaceholder": "Rechercher un article",
+    "search": "Rechercher",
+    "readMore": "Lire la suite",
+    "noPosts": "Aucun article trouvé.",
+    "backToBlog": "Tous les articles",
+    "featuredLabel": "En vedette"
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Les réponses aux questions que l'on nous pose le plus souvent.",
+    "items": [
+      {
+        "q": "Ai-je besoin d'un visa pour visiter l'Égypte ?",
+        "a": "La plupart des nationalités peuvent obtenir un e-visa ou un visa à l'arrivée. Nous vous conseillons selon votre passeport lors de la réservation."
+      },
+      {
+        "q": "Est-il sûr de voyager en Égypte ?",
+        "a": "Oui. Nous opérons dans des zones touristiques bien établies avec des guides et des chauffeurs vérifiés, et notre équipe reste joignable tout au long de votre voyage."
+      },
+      {
+        "q": "Quelle est la meilleure période pour visiter ?",
+        "a": "D'octobre à avril, les températures sont les plus agréables pour les visites et les croisières sur le Nil."
+      },
+      {
+        "q": "Comment puis-je payer ?",
+        "a": "Vous envoyez une demande de réservation et notre équipe confirme la disponibilité et le prix — aucun paiement n'est perçu en ligne en phase 1."
+      },
+      {
+        "q": "Les circuits peuvent-ils être personnalisés ?",
+        "a": "Absolument. Chaque itinéraire est un point de départ ; indiquez-nous vos préférences dans la demande et nous l'adaptons."
+      },
+      {
+        "q": "Qu'est-ce qui est inclus dans le prix ?",
+        "a": "Chaque circuit indique précisément sur sa page ce qui est inclus et exclu — généralement les transferts, le guidage et les droits d'entrée."
+      }
+    ]
+  },
+  "experiences": {
+    "title": "Expériences",
+    "subtitle": "Parcourez l'Égypte selon le type de voyage dont vous rêvez."
+  },
+  "partners": {
+    "title": "Nos partenaires",
+    "lead": "AIC Travel collabore avec des partenaires de confiance pour offrir une expérience fluide et haut de gamme.",
+    "soholidaysTitle": "SoHolidays — Partenaire touristique officiel",
+    "soholidays": "SoHolidays est notre partenaire touristique officiel, apportant une solide force opérationnelle sur le terrain dans toute l'Égypte à chaque voyage AIC Travel."
+  },
+  "guidesPage": {
+    "title": "Nos guides",
+    "subtitle": "Des égyptologues et des guides agréés qui font vivre chaque site.",
+    "languages": "Langues",
+    "available": "Disponible"
+  },
+  "transportPage": {
+    "title": "Transport",
+    "subtitle": "Une flotte moderne et bien entretenue pour voyager confortablement.",
+    "capacity": "Capacité",
+    "seats": "places"
+  },
+  "states": {
+    "noResults": "Aucun circuit ne correspond à votre recherche.",
+    "empty": "Rien à afficher pour le moment."
+  },
+  "meta": {
+    "phase0Note": "Fondations de la phase 0 — le système de design, l'i18n et la couche de données sont en cours de mise en place."
+  },
+  "tourTypes": {
+    "Day tour": "Excursion à la journée",
+    "Multi-day": "Circuit de plusieurs jours",
+    "Sea trip": "Sortie en mer",
+    "Diving": "Plongée",
+    "Safari": "Safari"
+  }
+}

@@ -1,0 +1,511 @@
+{
+  "brand": {
+    "name": "AIC Travel",
+    "partner": "SoHolidays",
+    "partnership": "SoHolidays iş birliğiyle",
+    "partnerRole": "Resmî Turizm Ortağı"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "tours": "Turlar",
+    "tailorMade": "Kişiye Özel Turlar",
+    "destinations": "Destinasyonlar",
+    "transfers": "Transferler",
+    "about": "Hakkımızda",
+    "blog": "Blog",
+    "contact": "İletişim"
+  },
+  "transfers": {
+    "title": "Özel Transferler",
+    "metaDescription": "Hurgada ve Kızıldeniz bölgesinde özel havalimanı veya otel transferi ayırtın. Araç başına sabit fiyatlar, modern filo, dakikalar içinde talep — online ödeme yok.",
+    "subtitle": "Havalimanları, oteller ve tatil köyleri arasında konforlu özel transferler — araç başına sabit fiyat, ekibimiz tarafından bizzat onaylanır.",
+    "formTitle": "Transfer talep edin",
+    "formSubtitle": "Güzergâhınızı ve aracınızı seçin — uygunluğu ve karşılama detaylarını bizzat onaylıyoruz.",
+    "from": "Alınış noktası",
+    "to": "Varış noktası",
+    "vehicle": "Araç",
+    "seats": "koltuk",
+    "passengers": "Yolcular",
+    "pickupDate": "Alınış tarihi",
+    "notes": "Notlar",
+    "notesPlaceholder": "Uçuş numarası, otel adı, varış saati…",
+    "selectOption": "Seçin…",
+    "price": "Transfer ücreti",
+    "priceNote": "Kişi başı değil, araç başına.",
+    "priceOnRequest": "Fiyat talep üzerine",
+    "submit": "Transfer talep et",
+    "invalidPickupDate": "Geçerli bir tarih seçin — bugün veya sonrası.",
+    "sameLocations": "Alınış ve varış noktaları farklı olmalıdır.",
+    "routeUnavailable": "Bu güzergâh şu anda uygun değil — lütfen başka bir seçenek belirleyin veya WhatsApp'tan bize ulaşın.",
+    "successTitle": "Transfer talebiniz alındı.",
+    "successBody": "Ekibimiz alınış saatini, buluşma noktasını ve ödemeyi onaylamak için kısa süre içinde sizinle iletişime geçecek.",
+    "point1Title": "Kapıdan kapıya",
+    "point1Body": "Şoförünüz sizi havalimanında veya otelde karşılar ve doğrudan hedefinize götürür — beklemeden, aktarmasız.",
+    "point2Title": "Sabit fiyatlar",
+    "point2Body": "Araç başına önceden belirlenmiş şeffaf fiyatlar — gizli ücret yok, sürpriz yok.",
+    "point3Title": "Modern filo",
+    "point3Body": "Her boyutta klimalı ve bakımlı araçlar — özel arabalardan otobüslere."
+  },
+  "tailorMade": {
+    "title": "Kişiye Özel Turlar",
+    "metaDescription": "Mısır'da kendi özel rotanızı oluşturun. AIC Travel'a ilgi alanlarınızı, temponuzu ve bütçenizi anlatın, kişisel bir seyahat planı alın — çevrimiçi ödeme yok, taahhüt yok.",
+    "lead": "Yolculuğunuz, sizin tarzınızda. Bize nelerden hoşlandığınızı anlatın; görülmesi gereken yerlerden saklı hazinelere, ilgi alanlarınıza, temponuza ve bütçenize göre yalnızca size özel bir rota tasarlayalım.",
+    "formTitle": "Yolculuğunuzu tasarlayın",
+    "formSubtitle": "Bilgilerinizi ve fikirlerinizi paylaşın — bir seyahat danışmanı kişisel bir planla size dönsün.",
+    "styleLabel": "Kim seyahat ediyor?",
+    "styles": {
+      "solo": "Tek başına",
+      "couple": "Çift",
+      "family": "Aile",
+      "group": "Grup"
+    },
+    "durationLabel": "Süre",
+    "durationAny": "Henüz belli değil",
+    "durationDay": "gün",
+    "durationDays": "gün",
+    "duration15Plus": "15+ gün",
+    "tripLabel": "Hayalinizdeki yolculuğu anlatın",
+    "tripPlaceholder": "Görmeyi hayal ettiğiniz yerler, sevdiğiniz etkinlikler, temponuz, bütçeniz — yolculuğunuzu tasarlamamıza yardımcı olacak her şey.",
+    "successNote": "Kişiye özel tur talebi"
+  },
+  "actions": {
+    "requestBooking": "Rezervasyon talebi",
+    "contactWhatsApp": "WhatsApp'tan iletişime geçin",
+    "explore": "Turları keşfedin",
+    "viewAllTours": "Tüm turları görün",
+    "allDestinations": "Tüm destinasyonlar",
+    "readBlog": "Blogu okuyun",
+    "clearFilters": "Filtreleri temizle",
+    "submit": "Talebi gönder"
+  },
+  "home": {
+    "heroTitle": "Mısır'ı özenle hazırlanmış rotalarla keşfedin.",
+    "heroSubtitle": "Nil boyunca ve Kahire, Luksor ile Kızıldeniz üzerinden özenle tasarlanmış yolculuklar — bir rezervasyon talebi gönderin, ekibimiz her ayrıntıyı size göre uyarlasın.",
+    "ctaExplore": "Turları keşfedin"
+  },
+  "homeExtra": {
+    "heroEyebrow": "Mısır · Özenle hazırlanmış yolculuklar",
+    "heroSearch": "Destinasyon veya tur arayın",
+    "search": "Ara",
+    "featuredEyebrow": "Özenle seçildi",
+    "exploreAll": "Tümünü keşfet",
+    "toursSuffix": "tur",
+    "heroPrev": "Önceki afiş",
+    "heroNext": "Sonraki afiş",
+    "heroGoto": "Afişe git"
+  },
+  "tourCard": {
+    "from": "başlangıç",
+    "perPerson": "kişi başı",
+    "originalPrice": "Eski fiyat",
+    "percentOff": "%{percent} indirim",
+    "days": "gün",
+    "dayOne": "gün",
+    "dayTwo": "gün",
+    "dayFew": "gün",
+    "dayMany": "gün",
+    "viewDetails": "Ayrıntıları gör",
+    "rating": "{count} değerlendirmeye göre 5 üzerinden {rating}"
+  },
+  "reviews": {
+    "title": "Gezgin yorumları",
+    "countOne": "{count} yorum",
+    "countMany": "{count} yorum",
+    "ratingOutOf": "5 üzerinden {rating}",
+    "travelledIn": "{date} tarihinde seyahat etti",
+    "starOne": "{count} yıldız",
+    "starMany": "{count} yıldız",
+    "featuredHeading": "Gezginlerimiz ne diyor"
+  },
+  "whyUs": {
+    "points": [
+      {
+        "title": "Yerel uzmanlık",
+        "body": "Mısırbilimci rehberler ve her noktayı birinci elden bilen bir ekip."
+      },
+      {
+        "title": "Dürüst fiyatlandırma",
+        "body": "Gizli ücret olmadan net teklifler — yola çıkmadan önce her ayrıntıyı siz onaylarsınız."
+      },
+      {
+        "title": "Her zaman ulaşılabilir",
+        "body": "Yolculuğunuzdan önce, sırasında ve sonrasında WhatsApp ve telefon desteği."
+      },
+      {
+        "title": "Yedi dil",
+        "body": "EN, AR, DE, RU, FR, IT, TR — tam sağdan sola yazım desteğiyle."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Mısır genelinde özenle hazırlanmış, üst düzey yolculuklar.",
+    "explore": "Keşfet",
+    "company": "Şirket",
+    "talk": "Bize ulaşın",
+    "legal": "Yasal",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Şartlar ve Koşullar",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "social": {
+    "followUs": "Bizi takip edin"
+  },
+  "catalog": {
+    "title": "Turlar",
+    "heading": "Mısır turları ve deneyimleri",
+    "searchPlaceholder": "Tur veya destinasyon arayın",
+    "search": "Ara",
+    "filters": "Filtreler",
+    "category": "Kategori",
+    "destination": "Destinasyon",
+    "type": "Tur türü",
+    "duration": "Süre",
+    "price": "Fiyat aralığı",
+    "suitability": "Şunlar için ideal",
+    "family": "Aileler",
+    "couple": "Çiftler",
+    "solo": "Tek başına gezenler",
+    "any": "Tümü",
+    "sort": "Sırala",
+    "sortFeatured": "Öne çıkanlar",
+    "sortPopular": "En popüler",
+    "sortPriceAsc": "Fiyat: artan",
+    "sortPriceDesc": "Fiyat: azalan",
+    "sortDuration": "Süre",
+    "clear": "Filtreleri temizle",
+    "resultsOne": "tur",
+    "resultsMany": "tur",
+    "noResultsTitle": "Filtrelerinize uygun tur bulunamadı",
+    "noResultsBody": "Aramanızı genişletmeyi ya da bazı filtreleri temizlemeyi deneyin.",
+    "durationDay": "Günübirlik gezi",
+    "durationShort": "2–3 gün",
+    "durationWeek": "4–7 gün",
+    "durationLong": "8+ gün",
+    "minPrice": "En az",
+    "maxPrice": "En çok",
+    "pagePrev": "Önceki",
+    "pageNext": "Sonraki",
+    "pageStatus": "Sayfa {current} / {total}",
+    "showMore": "Daha fazla göster",
+    "showLess": "Daha az göster"
+  },
+  "detail": {
+    "overview": "Genel bakış",
+    "itinerary": "Program",
+    "included": "Dahil olanlar",
+    "excluded": "Dahil olmayanlar",
+    "faq": "Sıkça sorulan sorular",
+    "related": "Bunları da beğenebilirsiniz",
+    "duration": "Süre",
+    "tourType": "Tur türü",
+    "goodFor": "Şunlar için ideal",
+    "from": "başlangıç",
+    "days": "gün",
+    "dayOne": "gün",
+    "dayTwo": "gün",
+    "dayFew": "gün",
+    "dayMany": "gün",
+    "perPerson": "kişi başı",
+    "originalPrice": "Eski fiyat",
+    "percentOff": "%{percent} indirim",
+    "noPayment": "Şimdi ödeme yok · önce uygunluğu teyit ederiz",
+    "reviews": "değerlendirme",
+    "backToTours": "Tüm turlar",
+    "highlights": "Öne çıkanlar",
+    "quickFacts": "Bir bakışta",
+    "pickup": "Transfer",
+    "languages": "Diller",
+    "cancellation": "İptal",
+    "pickupOptions": {
+      "HOTEL_INCLUDED": "Otelden alma dahil",
+      "AIRPORT_AVAILABLE": "Havalimanından alma mevcut",
+      "MEETING_POINT": "Başlangıç noktasında buluşma",
+      "NOT_INCLUDED": "Transfer dahil değil"
+    },
+    "cancellationOptions": {
+      "FREE_24H": "24 saat öncesine kadar ücretsiz iptal",
+      "FREE_48H": "48 saat öncesine kadar ücretsiz iptal",
+      "FREE_72H": "72 saat öncesine kadar ücretsiz iptal",
+      "NON_REFUNDABLE": "İade edilemez"
+    },
+    "gallery": {
+      "title": "Fotoğraf galerisi",
+      "viewAll": "Tüm fotoğrafları gör",
+      "photos": "fotoğraf",
+      "open": "Tam ekran aç",
+      "close": "Kapat",
+      "previous": "Önceki fotoğraf",
+      "next": "Sonraki fotoğraf"
+    }
+  },
+  "booking": {
+    "title": "Bu tur için talep gönderin",
+    "subtitle": "Bilgilerinizi paylaşın, ekibimiz uygunluk ve fiyatı teyit etsin.",
+    "fullName": "Ad soyad",
+    "email": "E-posta",
+    "phone": "Telefon numarası",
+    "country": "Ülke",
+    "date": "Tercih edilen seyahat tarihi",
+    "adults": "Yetişkinler",
+    "children": "Çocuklar",
+    "hotelName": "Otel adı",
+    "roomNumber": "Oda numarası",
+    "optional": "isteğe bağlı",
+    "decrease": "Azalt",
+    "increase": "Artır",
+    "requests": "Özel istekler",
+    "consent": "Talebimle ilgili benimle iletişime geçilmesini kabul ediyorum.",
+    "submit": "Talebi gönder",
+    "sending": "Gönderiliyor…",
+    "successTitle": "Talebiniz için teşekkür ederiz.",
+    "successBody": "Ekibimiz uygunluğu, fiyatı ve ödeme koşullarını teyit etmek için kısa süre içinde sizinle iletişime geçecek.",
+    "required": "Bu alan zorunludur.",
+    "invalidEmail": "Lütfen geçerli bir e-posta adresi girin.",
+    "consentRequired": "Lütfen iletişime geçilmesini onaylayın.",
+    "step": "Adım 1 / 1 · Ödeme yok",
+    "selectedTour": "Seçilen tur",
+    "securityNote": "Spam filtresiyle korunur · güvenle doğrulanır",
+    "reference": "Referans",
+    "backToTours": "Turlara dön",
+    "chatNow": "Şimdi bizimle sohbet edin",
+    "challengeLabel": "Robot değilim",
+    "challengeVerified": "Doğrulandı",
+    "challengeError": "Doğrulamanın süresi doldu — lütfen kutuyu yeniden işaretleyin.",
+    "challengeRequired": "Lütfen robot olmadığınızı doğrulayın.",
+    "throttleTitle": "Çok fazla deneme",
+    "throttleBody": "Şimdilik sınıra ulaştınız — lütfen yeniden denemeden önce bekleyin veya anında yanıt için bize WhatsApp'tan yazın.",
+    "throttleCountdown": "Şu süre sonra yeniden deneyebilirsiniz:",
+    "whatsappFallback": "Bize WhatsApp'tan yazın",
+    "errorGeneric": "Bir şeyler ters gitti — talebiniz gönderilemedi. Lütfen yeniden deneyin.",
+    "invalidDate": "Geçerli bir seyahat tarihi seçin (bugün veya sonrası).",
+    "tourUnavailable": "Bu tur artık mevcut değil. Lütfen diğer turlarımıza göz atın veya bize WhatsApp'tan ulaşın.",
+    "totalPrice": "Toplam fiyat",
+    "originalPrice": "Eski fiyat",
+    "phoneWhatsAppNote": "Lütfen WhatsApp’ta aktif olan bir telefon numarası kullanın."
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Yolculuğunuzu planlamanıza yardımcı olmak için buradayız — tercih ettiğiniz yoldan bize ulaşın.",
+    "whatsapp": "WhatsApp",
+    "whatsappDesc": "En hızlı yanıt — ekibimizle sohbet edin.",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "formTitle": "Bize mesaj gönderin",
+    "name": "Ad soyad",
+    "message": "Mesaj",
+    "send": "Mesaj gönder",
+    "sending": "Gönderiliyor…",
+    "successTitle": "Mesaj gönderildi.",
+    "successBody": "Teşekkürler — ekibimiz bir iş günü içinde yanıt verecek.",
+    "required": "Bu alan zorunludur.",
+    "invalidEmail": "Lütfen geçerli bir e-posta adresi girin.",
+    "consent": "Talebimle ilgili benimle iletişime geçilmesini kabul ediyorum.",
+    "consentRequired": "Lütfen iletişime geçilmesini onaylayın.",
+    "challengeLabel": "Robot değilim",
+    "challengeVerified": "Doğrulandı",
+    "challengeError": "Doğrulamanın süresi doldu — lütfen kutuyu yeniden işaretleyin.",
+    "challengeRequired": "Lütfen robot olmadığınızı doğrulayın.",
+    "throttleTitle": "Çok fazla deneme",
+    "throttleBody": "Şimdilik sınıra ulaştınız — lütfen yeniden denemeden önce bekleyin veya anında yanıt için bize WhatsApp'tan yazın.",
+    "throttleCountdown": "Şu süre sonra yeniden deneyebilirsiniz:",
+    "whatsappFallback": "Bize WhatsApp'tan yazın",
+    "errorGeneric": "Bir şeyler ters gitti — talebiniz gönderilemedi. Lütfen yeniden deneyin."
+  },
+  "about": {
+    "title": "AIC Travel ve SoHolidays hakkında",
+    "lead": "Derinlik, konfor ve gerçek yerel uzmanlık isteyen gezginler için acele etmeyen, uzman rehberli yolculuklar tasarlayan üst düzey bir Mısır tur operatörü — resmî turizm ortağımız SoHolidays iş birliğiyle.",
+    "metaDescription": "AIC Travel, 2018'de kurulan, merkezi Hurgada'da bulunan bir Mısır tur operatörüdür; Mısır genelinde kişiye özel turlar, özel geziler ve transferler tasarlar — SoHolidays iş birliğiyle.",
+    "heroAlt": "Güneş ışığında hiyerogliflerle kaplı antik Mısır tapınağı sütunları",
+    "storyTitle": "Hikâyemiz",
+    "storyParagraphs": [
+      "AIC Travel, 2018 yılında Mısır'ın Kızıldeniz kıyısındaki Hurgada'da kuruldu. Her şey basit bir tutkuyla başladı — Mısır'ın güzelliğini, kültürünü ve tarihini dünyayla paylaşmak — ve zamanla ülke genelinde kişiye özel turlar, özel geziler ve transferler tasarlayan bir ekibe dönüştü.",
+      "O günden bu yana dünyanın dört bir yanından gezginleri ağırladık; onlara Kızıldeniz'in altın kumlarını, Luksor'un antik tapınaklarını, Giza'nın görkemli piramitlerini ve Kahire'nin rengârenk sokaklarını gezdirdik.",
+      "Seyahatin yalnızca yer görmek değil, anı biriktirmek olduğuna inanıyoruz. Her yolculuk ilgi alanlarınıza, temponuza ve tarzınıza göre tasarlanır; seyahat uzmanları, lisanslı rehberler ve profesyonel sürücüler her adımda konforunuzu ve güvenliğinizi gözetir."
+    ],
+    "servicesTitle": "Neler yapıyoruz",
+    "servicesLead": "İlk fikirden son transfere — tüm yolculuk için tek bir yerel ortak.",
+    "services": [
+      {
+        "title": "Kişiye özel turlar",
+        "body": "İlgi alanlarınıza, temponuza ve bütçenize göre kurgulanan özel rotalar — görülmesi gereken yerlerden saklı hazinelere."
+      },
+      {
+        "title": "Havalimanı transferleri",
+        "body": "Mısır genelinde havalimanı karşılama, otele bırakma ve şehirler arası ulaşım — tek yön veya gidiş-dönüş."
+      },
+      {
+        "title": "Otel rezervasyonu",
+        "body": "Mısır'ın destinasyonlarında size uygun konaklamayı seçmenize ve ayırtmanıza yardım."
+      },
+      {
+        "title": "Uçak bileti",
+        "body": "Uçak biletleri ve rotanız için esnek seçeneklerde destek."
+      },
+      {
+        "title": "Vize desteği",
+        "body": "Mısır vize sürecinde ve uçuştan önce hazırlanacak belgelerde yol gösterme."
+      },
+      {
+        "title": "SIM kartlar",
+        "body": "İnternet ve arama paketli yerel SIM kartlar — vardığınızda hazır."
+      }
+    ],
+    "whyTitle": "Neden bizimle seyahat etmelisiniz",
+    "whyLead": "Yerel bir operatörle seyahat etmek gerçekte ne demek.",
+    "why": [
+      {
+        "title": "Merkezimiz Hurgada",
+        "body": "Mısır'ın Kızıldeniz kıyısında yerel bir ekip — seyahat ettiğiniz yerlerde yaşıyoruz."
+      },
+      {
+        "title": "Lisanslı rehberler",
+        "body": "Turlara, Mısır'ın tarihini ve ören yerlerini birinci elden bilen lisanslı rehberler eşlik eder."
+      },
+      {
+        "title": "Profesyonel sürücüler",
+        "body": "Konforlu özel araçlar — limuzin, minibüs veya otobüs — direksiyonda profesyonel sürücülerle."
+      },
+      {
+        "title": "Kişiye özel rotalar",
+        "body": "Her yolculuk, yalnızca sizin için kişiselleştirilir."
+      },
+      {
+        "title": "Çok dilli ekip",
+        "body": "Misafirlerimizi birçok dilde ağırlıyoruz — İngilizce ve Almancadan İtalyanca ve Rusçaya."
+      },
+      {
+        "title": "7/24 destek",
+        "body": "Yardım mı lazım? Destek ekibimize günün her saati ulaşabilirsiniz — yolculuktan önce ve yolculuk sırasında."
+      }
+    ],
+    "howTitle": "Nasıl çalışır",
+    "howLead": "Rezervasyon bir ödeme sayfası değil, bir taleptir — çevrimiçi ödemesiz, kişisel bir süreç.",
+    "steps": [
+      {
+        "title": "Seyahat talebinizi gönderin",
+        "body": "Bir tur seçin ya da hayalinizdeki yolculuğu anlatın — bir dakikanızı alır ve hiçbir ücret ödemezsiniz."
+      },
+      {
+        "title": "Bir seyahat danışmanıyla görüşün",
+        "body": "Tarihleri, ayrıntıları ve sorularınızı konuşmak için size gerçek bir insan yanıt verir."
+      },
+      {
+        "title": "Kişisel rotanızı alın",
+        "body": "Programı size göre şekillendirir, müsaitlik ve fiyatları teyit ederiz."
+      },
+      {
+        "title": "Rezervasyonunuzu onaylayın",
+        "body": "Son planı danışmanınızla birlikte onaylayın — çevrimiçi hiçbir ödeme alınmaz."
+      },
+      {
+        "title": "Yolculuğunuzun tadını çıkarın",
+        "body": "Rehberiniz ve sürücünüzle buluşup Mısır'ı keşfedin; ekibimiz yolculuk boyunca ulaşılabilir olur."
+      }
+    ],
+    "ctaTitle": "Yolculuğunuzu planlamaya başlayın",
+    "ctaBody": "Bize neyi görmek istediğinizi anlatın — gerisini biz tasarlayalım."
+  },
+  "legal": {
+    "privacyTitle": "Gizlilik Politikası",
+    "termsTitle": "Şartlar ve Koşullar",
+    "lastUpdated": "Son güncelleme",
+    "privacyIntro": "Bu politika, AIC Travel'ın rezervasyon talebi ve iletişim formları aracılığıyla hangi kişisel verileri topladığını, bunların nasıl kullanıldığını ve saklandığını, erişim veya silme talebinin nasıl yapılacağını açıklar.",
+    "termsIntro": "Bu şartlar, AIC Travel web sitesinin ve rezervasyon talebi sürecinin kullanımını düzenler. Rezervasyonlar yalnızca taleptir — 1. aşamada çevrimiçi ödeme alınmaz."
+  },
+  "cookie": {
+    "title": "Gizliliğinize değer veriyoruz",
+    "message": "Deneyiminizi iyileştirmek ve site trafiğini ölçmek için çerezler kullanıyoruz. Analiz araçları yalnızca onayınızla yüklenir.",
+    "accept": "Tümünü kabul et",
+    "reject": "Reddet",
+    "learnMore": "Gizlilik Politikası"
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "body": "Aradığınız sayfa mevcut değil veya taşınmış.",
+    "home": "Ana sayfaya dön",
+    "tours": "Turlara göz atın"
+  },
+  "destinationsPage": {
+    "title": "Destinasyonlar",
+    "subtitle": "Gezginlerimizin gitmeyi sevdiği yerler.",
+    "toursIn": "Şuradaki turlar:",
+    "noTours": "Bu destinasyon için turlar çok yakında.",
+    "explore": "Keşfet"
+  },
+  "blog": {
+    "title": "Seyahat Günlüğü",
+    "subtitle": "Mısır yolculuğunuz için rehberler ve ipuçları.",
+    "searchPlaceholder": "Makale ara",
+    "search": "Ara",
+    "readMore": "Devamını oku",
+    "noPosts": "Makale bulunamadı.",
+    "backToBlog": "Tüm makaleler",
+    "featuredLabel": "Öne çıkan"
+  },
+  "faq": {
+    "title": "Sıkça sorulan sorular",
+    "subtitle": "En sık duyduğumuz soruların yanıtları.",
+    "items": [
+      {
+        "q": "Mısır'ı ziyaret etmek için vize gerekir mi?",
+        "a": "Çoğu ülke vatandaşı e-vize veya kapıda vize alabilir. Rezervasyon sırasında pasaportunuza göre size tavsiyede bulunuruz."
+      },
+      {
+        "q": "Mısır'da seyahat etmek güvenli mi?",
+        "a": "Evet. Doğrulanmış rehberler ve şoförlerle köklü turistik bölgelerde faaliyet gösteriyoruz ve ekibimiz yolculuğunuz boyunca ulaşılabilir."
+      },
+      {
+        "q": "Ziyaret için en iyi zaman ne zaman?",
+        "a": "Ekim'den Nisan'a kadar olan dönem, geziler ve Nil turları için en konforlu sıcaklıkları sunar."
+      },
+      {
+        "q": "Ödemeyi nasıl yaparım?",
+        "a": "Bir rezervasyon talebi gönderirsiniz, ekibimiz uygunluğu ve fiyatı teyit eder — 1. aşamada çevrimiçi ödeme alınmaz."
+      },
+      {
+        "q": "Turlar özelleştirilebilir mi?",
+        "a": "Kesinlikle. Her rota bir başlangıç noktasıdır; tercihlerinizi talepte belirtin, biz de ona göre uyarlayalım."
+      },
+      {
+        "q": "Fiyata neler dahil?",
+        "a": "Her tur, kendi sayfasında neyin dahil olduğunu ve olmadığını tam olarak listeler — genellikle transferler, rehberlik ve giriş ücretleri."
+      }
+    ]
+  },
+  "experiences": {
+    "title": "Deneyimler",
+    "subtitle": "Mısır'ı hayalini kurduğunuz yolculuk türüne göre keşfedin."
+  },
+  "partners": {
+    "title": "Ortaklarımız",
+    "lead": "AIC Travel, kusursuz ve üst düzey bir deneyim sunmak için güvenilir ortaklarla çalışır.",
+    "soholidaysTitle": "SoHolidays — Resmî Turizm Ortağı",
+    "soholidays": "SoHolidays, her AIC Travel yolculuğuna Mısır genelinde sahadaki güçlü operasyonel desteği katan resmî turizm ortağımızdır."
+  },
+  "guidesPage": {
+    "title": "Rehberlerimiz",
+    "subtitle": "Her noktayı canlandıran Mısırbilimciler ve lisanslı rehberler.",
+    "languages": "Diller",
+    "available": "Müsait"
+  },
+  "transportPage": {
+    "title": "Ulaşım",
+    "subtitle": "Konforlu seyahat için modern, iyi bakımlı bir filo.",
+    "capacity": "Kapasite",
+    "seats": "koltuk"
+  },
+  "states": {
+    "noResults": "Aramanıza uygun tur bulunamadı.",
+    "empty": "Burada henüz bir şey yok."
+  },
+  "meta": {
+    "phase0Note": "0. aşama temeli — tasarım sistemi, i18n ve veri katmanı kuruluyor."
+  },
+  "tourTypes": {
+    "Day tour": "Günübirlik tur",
+    "Multi-day": "Çok günlü tur",
+    "Sea trip": "Deniz turu",
+    "Diving": "Dalış",
+    "Safari": "Safari"
+  }
+}

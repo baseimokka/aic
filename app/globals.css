@@ -1,0 +1,295 @@
+@import "tailwindcss";
+
+/*
+  AIC Travel × SoHolidays — design tokens, matched to the approved design system.
+  Cards are WHITE on a sandstone ground; sections alternate cream / white / navy.
+*/
+@theme {
+  /* grounds & surfaces.
+     One continuous page surface: cream (#FBF8F3) is the site-wide base —
+     the design's page background (#EDE6DA was only the mockup canvas).
+     White is reserved for raised surfaces (cards, header, trust bar);
+     navy and the orange gradient are the two deliberate emphasis beats. */
+  /* BRAND-DERIVED NEUTRALS: both logos live on pure white and carry
+     navy #201146 + orange + gold + teal. Every neutral below is therefore
+     a navy-tinted gray on a near-white canvas — no cream/sand/brown
+     atmosphere that the logos don't contain. Warmth comes from the
+     chromatic accents and (later) photography, never from the canvas. */
+  --color-ground: #f8f8fa;      /* legacy alias — same as cream */
+  --color-cream: #f8f8fa;       /* page base — brand-neutral near-white */
+  --color-surface: #ffffff;     /* cards — the logos' own ground */
+  --color-surface-2: #f0eff5;   /* soft indigo-gray — chips, tiles, steppers */
+  --color-panel: #f8f8fa;
+  --color-line: #eae9ef;        /* card / section borders — navy-tinted */
+  --color-line-soft: #f1f0f5;   /* hairline dividers */
+  --color-line-input: #d5d4dd;  /* input borders */
+
+  /* ink / text — one navy family from the AIC logo */
+  --color-ink: #201146;         /* headings, primary (logo navy) */
+  --color-ink-soft: #3f3a55;    /* body copy — navy-gray */
+  --color-muted: #6e6a80;       /* secondary / meta */
+  --color-faint: #9895a3;       /* tertiary / captions */
+  --color-navy: #201146;        /* dark sections (footer, testimonial, hero overlay) */
+
+  /* brand */
+  --color-accent: #f0602f;      /* primary CTA */
+  --color-accent-deep: #d94e20; /* hover / pressed */
+  --color-accent-soft: #fcebe2; /* ghost hover, tinted icon tiles */
+  --color-gold: #f5a623;        /* eyebrows & headers on dark */
+  --color-teal: #0e7a72;        /* category overlines, family badge */
+  --color-teal-soft: #e2f1ef;
+  --color-purple: #6c4ba6;
+  --color-purple-soft: #efeaf7;
+
+  /* semantic */
+  --color-success: #1f8a5b;
+  --color-success-deep: #0f6b43;
+  --color-warning: #c98a16;
+  --color-warning-soft: #fbf2de;
+  --color-danger: #c4362b;
+  --color-danger-soft: #fdf3f1;
+  --color-info: #2f6db0;
+  --color-whatsapp: #25d366;
+
+  /* type families (loaded via <link> in the locale layout) */
+  --font-sans: "Hanken Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Newsreader", "Iowan Old Style", Palatino, Georgia, serif;
+  --font-arabic: "IBM Plex Sans Arabic", "Hanken Grotesque", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  html[dir="rtl"] body {
+    font-family: var(--font-arabic);
+  }
+  /* Arabic is cursive: letter-spacing breaks letter joins. Neutralize all
+     tracking utilities in RTL so labels/eyebrows render with proper joins. */
+  html[dir="rtl"] * {
+    letter-spacing: 0;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Navy-tinted elevation scale (from the design system). */
+@layer components {
+  .shadow-card {
+    box-shadow: 0 2px 8px rgba(32, 17, 70, 0.07);
+  }
+  .shadow-lift {
+    box-shadow: 0 8px 24px rgba(32, 17, 70, 0.1);
+  }
+  .shadow-pop {
+    box-shadow: 0 20px 48px rgba(32, 17, 70, 0.16);
+  }
+
+  /* One-shot reveal — the page's single motion system, paired with
+     components/site/reveal.tsx, which flips data-revealed the first time the
+     block enters the viewport. It plays once and stays: no scrubbing, no
+     replay on scroll-back. Opted out under reduced motion, and when scripting
+     is off nothing can flip the attribute — so content starts visible. */
+  .reveal-once {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 700ms ease-out, transform 700ms ease-out;
+  }
+  .reveal-once[data-revealed] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce), (scripting: none) {
+    .reveal-once {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* Staggered reveal — the multi-child sibling of .reveal-once, paired with
+     components/site/stagger-group.tsx. This rule only supplies the HIDDEN start
+     state so server-rendered cards never flash visible-then-hidden while the
+     page hydrates; the motion itself is GSAP's (lib/animation/use-stagger-reveal),
+     because a grid needs its children sequenced against each other, which CSS
+     cannot express. Once the hook has written that hidden state inline it flips
+     data-revealed so this rule stops competing, and it clears its inline styles
+     when done — that is why the revealed state must reset the transform, or the
+     40px offset below would reassert itself on the cards.
+     Same escape hatches as .reveal-once: under reduced motion or with scripting
+     off nothing can hide the content. No transition here — an un-hydrated or
+     reduced-motion visitor gets a static grid, not a slow one. */
+  .stagger-once > * {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  .stagger-once[data-revealed] > * {
+    opacity: 1;
+    transform: none;
+  }
+  /* Mobile card rail — below `sm` a card grid becomes ONE horizontally
+     swipeable, snap-aligned row instead of a tall stack, so a three-card
+     section stays scannable in a single screen on a 360px phone.
+
+     Callers keep their grid classes but move `grid` behind the `sm:` prefix
+     (`card-rail … sm:grid sm:grid-cols-2`). That matters: Tailwind's utilities
+     layer outranks this components layer, so a plain `grid` class would beat
+     `display: flex` here and the rail would never engage.
+
+     The negative inline margin lets the rail bleed to the viewport edges while
+     the matching padding keeps the first card flush with the section's 24px
+     gutter — so the next card peeks in. That peek IS the swipe affordance; no
+     dots and no JS are needed to advertise it.
+
+     RTL: every property here is logical (margin-inline, padding-inline,
+     scroll-snap-align: start), so the rail mirrors for Arabic automatically.
+
+     Keyboard: no tabindex needed. The children are links, so Tab reaches each
+     one and the browser scrolls it into view. */
+  @media (max-width: 639px) {
+    .card-rail {
+      display: flex;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 1.5rem;
+      margin-inline: -1.5rem;
+      padding-inline: 1.5rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .card-rail::-webkit-scrollbar {
+      display: none;
+    }
+    .card-rail > * {
+      flex: 0 0 82%;
+      scroll-snap-align: start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce), (scripting: none) {
+    .stagger-once > * {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Hero text entrance — same motion spec as .reveal-once, but CSS-driven and
+     fired at first paint. The hero is always above the fold, so an observer
+     would only make the LCP heading wait for hydration before it can paint. */
+  .reveal-load {
+    animation: reveal-rise 700ms ease-out both;
+  }
+  @keyframes reveal-rise {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-load {
+      animation: none;
+    }
+  }
+
+  /* Hero carousel — slow Ken Burns zoom on the ACTIVE slide only. The cross-fade
+     itself is inline opacity; this just adds the subtle push-in. Disabled under
+     prefers-reduced-motion (same policy as .reveal). Scale never drops below 1,
+     so the object-cover image always fills its clipped frame — no edge gaps. */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-kenburns {
+      animation: hero-kenburns 7000ms ease-out both;
+    }
+    @keyframes hero-kenburns {
+      from {
+        transform: scale(1.02);
+      }
+      to {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  /* Hero CTA — always visible on touch & keyboard; on pointer devices it reveals
+     only while the banner is hovered (the requested hover button). focus-within
+     keeps it reachable via keyboard, so it never fails WCAG AA, and its slot is
+     always reserved so revealing it causes no layout shift. */
+  .hero-cta {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 320ms ease, transform 320ms ease;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .hero-hover-root:not(:hover) .hero-cta {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    .hero-hover-root:focus-within .hero-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-cta {
+      transition: none;
+    }
+  }
+
+  /* Dual-range price slider — overlapping native inputs with orange thumbs. */
+  .dual-range input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    inset-inline: 0;
+    inset-block: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: transparent;
+    pointer-events: none;
+  }
+  .dual-range input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: auto;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--color-accent);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(32, 17, 70, 0.25);
+  }
+  .dual-range input[type="range"]::-moz-range-thumb {
+    pointer-events: auto;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--color-accent);
+    cursor: pointer;
+  }
+}

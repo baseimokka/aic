@@ -1,0 +1,751 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Tour {
+  id                 String              @id @default(cuid())
+  slug               String              @unique
+  categoryId         String?
+  destinationId      String?
+  durationDays       Int
+  basePrice          Decimal             @db.Decimal(10, 2)
+  /// ISO 4217 code; the allowed set is managed in Settings.currencies.
+  currency           String              @default("USD")
+  // Optional per-tour discount: FIXED = discounted price, PERCENT = % off the
+  // base price. Active only inside the optional startsAt…endsAt window.
+  discountType       DiscountType?
+  discountValue      Decimal?            @db.Decimal(10, 2)
+  discountStartsAt   DateTime?
+  discountEndsAt     DateTime?
+  tourType           String
+  // Quick Facts — optional structured traveler info; null/empty hides the fact.
+  // guideLanguages holds ISO 639-1 codes (localized via Intl.DisplayNames).
+  pickupType         PickupType?
+  cancellationPolicy CancellationPolicy?
+  guideLanguages     String[]            @default([])
+  familyFriendly     Boolean             @default(false)
+  coupleFriendly     Boolean             @default(false)
+  soloFriendly       Boolean             @default(false)
+  featured           Boolean             @default(false)
+  popularityScore    Int                 @default(0)
+  status             TourStatus          @default(ACTIVE)
+  archivedAt         DateTime?
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  faqs               Faq[]
+  leads              Lead[]
+  reviews            Review[]
+  category           Category?           @relation(fields: [categoryId], references: [id])
+  destination        Destination?        @relation(fields: [destinationId], references: [id])
+  images             TourImage[]
+  translations       TourTranslation[]
+
+  @@index([categoryId])
+  @@index([destinationId])
+  @@index([featured])
+  @@index([status])
+}
+
+model TourTranslation {
+  id              String   @id @default(cuid())
+  tourId          String
+  locale          Locale
+  title           String
+  overview        String
+  itinerary       String
+  highlights      String[]
+  included        String[]
+  excluded        String[]
+  // Manually written Quick Facts — free text per entry, optional "Label :: Value"
+  // format. Localized like highlights; rendered after the structured facts.
+  customFacts     String[] @default([])
+  seoTitle        String?
+  metaDescription String?
+  ogImagePath     String?
+  slug            String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  tour            Tour     @relation(fields: [tourId], references: [id], onDelete: Cascade)
+
+  @@unique([tourId, locale])
+  @@index([locale])
+  @@index([locale, slug])
+}
+
+model TourImage {
+  id        String @id @default(cuid())
+  tourId    String
+  path      String
+  alt       String
+  sortOrder Int    @default(0)
+  tour      Tour   @relation(fields: [tourId], references: [id], onDelete: Cascade)
+
+  @@index([tourId])
+}
+
+model Category {
+  id           String                @id @default(cuid())
+  slug         String                @unique
+  order        Int                   @default(0)
+  archivedAt   DateTime?
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+  translations CategoryTranslation[]
+  tours        Tour[]
+}
+
+model CategoryTranslation {
+  id          String   @id @default(cuid())
+  categoryId  String
+  locale      Locale
+  name        String
+  description String?
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@unique([categoryId, locale])
+  @@index([locale])
+}
+
+model Destination {
+  id            String                   @id @default(cuid())
+  slug          String                   @unique
+  heroImagePath String?
+  order         Int                      @default(0)
+  featured      Boolean                  @default(false)
+  archivedAt    DateTime?
+  createdAt     DateTime                 @default(now())
+  updatedAt     DateTime                 @updatedAt
+  translations  DestinationTranslation[]
+  tours         Tour[]
+}
+
+model DestinationTranslation {
+  id              String      @id @default(cuid())
+  destinationId   String
+  locale          Locale
+  name            String
+  description     String?
+  seoTitle        String?
+  metaDescription String?
+  slug            String?
+  destination     Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+
+  @@unique([destinationId, locale])
+  @@index([locale])
+  @@index([locale, slug])
+}
+
+model Testimonial {
+  id            String                   @id @default(cuid())
+  authorName    String
+  authorCountry String?
+  avatarPath    String?
+  rating        Int?
+  order         Int                      @default(0)
+  featured      Boolean                  @default(false)
+  archivedAt    DateTime?
+  createdAt     DateTime                 @default(now())
+  updatedAt     DateTime                 @updatedAt
+  translations  TestimonialTranslation[]
+}
+
+model TestimonialTranslation {
+  id            String      @id @default(cuid())
+  testimonialId String
+  locale        Locale
+  quote         String
+  testimonial   Testimonial @relation(fields: [testimonialId], references: [id], onDelete: Cascade)
+
+  @@unique([testimonialId, locale])
+  @@index([locale])
+}
+
+/// Customer review (V1: admin-managed only; no public submission — §18).
+/// Flat, additive-friendly shape: future features (verifiedAt, photos child
+/// table, admin reply, helpful votes, moderation status, externalId for Google
+/// import) land as new columns/tables without refactoring this model.
+/// Review text stays in the language it was written (`language`) — never
+/// translated, so no companion translation table (unlike CMS content, §5).
+model Review {
+  id              String       @id @default(cuid())
+  tourId          String?
+  customerName    String
+  customerCountry String?
+  rating          Int
+  body            String
+  travelDate      DateTime?
+  language        Locale       @default(en)
+  source          ReviewSource @default(WEBSITE)
+  featured        Boolean      @default(false)
+  visible         Boolean      @default(true)
+  displayOrder    Int          @default(0)
+  archivedAt      DateTime?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  tour            Tour?        @relation(fields: [tourId], references: [id], onDelete: SetNull)
+
+  @@index([tourId, visible, archivedAt])
+  @@index([featured, visible])
+  @@index([language])
+  @@index([source])
+  @@index([rating])
+}
+
+model Faq {
+  id           String           @id @default(cuid())
+  tourId       String?
+  order        Int              @default(0)
+  archivedAt   DateTime?
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  tour         Tour?            @relation(fields: [tourId], references: [id], onDelete: Cascade)
+  translations FaqTranslation[]
+
+  @@index([tourId])
+}
+
+model FaqTranslation {
+  id       String @id @default(cuid())
+  faqId    String
+  locale   Locale
+  question String
+  answer   String
+  faq      Faq    @relation(fields: [faqId], references: [id], onDelete: Cascade)
+
+  @@unique([faqId, locale])
+  @@index([locale])
+}
+
+model HomepageSection {
+  id           String                       @id @default(cuid())
+  key          String                       @unique
+  type         String
+  order        Int                          @default(0)
+  enabled      Boolean                      @default(true)
+  createdAt    DateTime                     @default(now())
+  updatedAt    DateTime                     @updatedAt
+  translations HomepageSectionTranslation[]
+}
+
+model HomepageSectionTranslation {
+  id        String          @id @default(cuid())
+  sectionId String
+  locale    Locale
+  heading   String?
+  body      String?
+  ctaLabel  String?
+  section   HomepageSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+
+  @@unique([sectionId, locale])
+  @@index([locale])
+}
+
+model HeroBanner {
+  id           String                  @id @default(cuid())
+  imagePath    String
+  ctaUrl       String?
+  order        Int                     @default(0)
+  enabled      Boolean                 @default(true)
+  showSearch   Boolean                 @default(true)
+  startsAt     DateTime?
+  endsAt       DateTime?
+  createdAt    DateTime                @default(now())
+  updatedAt    DateTime                @updatedAt
+  archivedAt   DateTime?
+  translations HeroBannerTranslation[]
+}
+
+model HeroBannerTranslation {
+  id          String     @id @default(cuid())
+  bannerId    String
+  locale      Locale
+  headline    String
+  subheadline String?
+  ctaLabel    String?
+  banner      HeroBanner @relation(fields: [bannerId], references: [id], onDelete: Cascade)
+
+  @@unique([bannerId, locale])
+  @@index([locale])
+}
+
+model BlogCategory {
+  id         String     @id @default(cuid())
+  slug       String     @unique
+  name       String
+  archivedAt DateTime?
+  posts      BlogPost[]
+}
+
+model BlogPost {
+  id             String                @id @default(cuid())
+  slug           String                @unique
+  categoryId     String?
+  featured       Boolean               @default(false)
+  published      Boolean               @default(false)
+  coverImagePath String?
+  publishedAt    DateTime?
+  archivedAt     DateTime?
+  createdAt      DateTime              @default(now())
+  updatedAt      DateTime              @updatedAt
+  category       BlogCategory?         @relation(fields: [categoryId], references: [id])
+  translations   BlogPostTranslation[]
+
+  @@index([published])
+  @@index([featured])
+}
+
+model BlogPostTranslation {
+  id              String   @id @default(cuid())
+  postId          String
+  locale          Locale   @default(en)
+  title           String
+  excerpt         String?
+  body            String
+  seoTitle        String?
+  metaDescription String?
+  ogImagePath     String?
+  post            BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([postId, locale])
+  @@index([locale])
+}
+
+model Lead {
+  id               String              @id @default(cuid())
+  tourId           String?
+  fullName         String
+  /// Optional: manually entered leads (WhatsApp / phone / walk-in) may have no email.
+  email            String?
+  phone            String
+  country          String
+  preferredDate    DateTime?
+  adults           Int                 @default(1)
+  specialRequests  String?
+  status           LeadStatus          @default(NEW)
+  assignedStaffId  String?
+  source           String?
+  quotedTotal      Decimal?            @db.Decimal(10, 2)
+  finalAgreedPrice Decimal?            @db.Decimal(10, 2)
+  deposit          Decimal             @default(0) @db.Decimal(10, 2)
+  /// ISO 4217 code; the allowed set is managed in Settings.currencies.
+  currency         String              @default("USD")
+  paymentStatus    PaymentStatus       @default(UNPAID)
+  archivedAt       DateTime?
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+  children         Int                 @default(0)
+  hotelName        String?
+  roomNumber       String?
+  locale           Locale              @default(en)
+  assignment       Assignment?
+  assignedStaff    User?               @relation("LeadAssignee", fields: [assignedStaffId], references: [id])
+  tour             Tour?               @relation(fields: [tourId], references: [id])
+  communications   LeadCommunication[]
+  notes            LeadNote[]
+
+  @@index([status])
+  @@index([assignedStaffId])
+  @@index([country])
+  @@index([paymentStatus])
+}
+
+model LeadNote {
+  id        String   @id @default(cuid())
+  leadId    String
+  authorId  String?
+  body      String
+  createdAt DateTime @default(now())
+  author    User?    @relation(fields: [authorId], references: [id])
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId])
+}
+
+model LeadCommunication {
+  id        String   @id @default(cuid())
+  leadId    String
+  authorId  String?
+  channel   String
+  summary   String
+  createdAt DateTime @default(now())
+  author    User?    @relation(fields: [authorId], references: [id])
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId])
+}
+
+/// Customer-facing transfer fleet (Transfer module) — distinct from the internal
+/// operations fleet (`Vehicle`): names are shown publicly on the transfer form.
+model TransferVehicle {
+  id         String            @id @default(cuid())
+  name       String
+  capacity   Int
+  active     Boolean           @default(true)
+  archivedAt DateTime?
+  createdAt  DateTime          @default(now())
+  updatedAt  DateTime          @updatedAt
+  routes     TransferRoute[]
+  requests   TransferRequest[]
+
+  @@index([active])
+}
+
+/// Pickup / drop-off points offered on the public transfer form (admin-managed).
+/// Names are proper nouns (e.g. "Hurghada Airport") — not translated, like Guide/Vehicle.
+model TransferLocation {
+  id           String            @id @default(cuid())
+  name         String
+  active       Boolean           @default(true)
+  archivedAt   DateTime?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  routesFrom   TransferRoute[]   @relation("TransferRouteFrom")
+  routesTo     TransferRoute[]   @relation("TransferRouteTo")
+  requestsFrom TransferRequest[] @relation("TransferRequestFrom")
+  requestsTo   TransferRequest[] @relation("TransferRequestTo")
+
+  @@index([active])
+}
+
+/// Configurable price for a directed route (from → to). `vehicleId = null` is the
+/// default price for any vehicle; a vehicle-specific row overrides it. Directions
+/// are priced independently (Airport → Makadi may differ from Makadi → Airport).
+/// The unique triple guards duplicates at the DB level for vehicle-specific rows;
+/// null-vehicle duplicates (NULLs compare distinct) are rejected in the server action.
+model TransferRoute {
+  id             String           @id @default(cuid())
+  fromLocationId String
+  toLocationId   String
+  vehicleId      String?
+  price          Decimal          @db.Decimal(10, 2)
+  /// ISO 4217 code; the allowed set is managed in Settings.currencies.
+  currency       String           @default("USD")
+  archivedAt     DateTime?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  fromLocation   TransferLocation @relation("TransferRouteFrom", fields: [fromLocationId], references: [id])
+  toLocation     TransferLocation @relation("TransferRouteTo", fields: [toLocationId], references: [id])
+  vehicle        TransferVehicle? @relation(fields: [vehicleId], references: [id])
+
+  @@unique([fromLocationId, toLocationId, vehicleId])
+  @@index([fromLocationId])
+  @@index([toLocationId])
+  @@index([vehicleId])
+}
+
+/// A public transfer booking request — deliberately separate from Lead (tour CRM).
+/// `quotedPrice` snapshots the resolved route price at submission time, so later
+/// pricing changes never rewrite what the customer was shown.
+model TransferRequest {
+  id             String                @id @default(cuid())
+  fullName       String
+  email          String
+  phone          String
+  pickupDate     DateTime
+  passengers     Int                   @default(1)
+  vehicleId      String
+  fromLocationId String
+  toLocationId   String
+  notes          String?
+  quotedPrice    Decimal?              @db.Decimal(10, 2)
+  /// ISO 4217 code; the allowed set is managed in Settings.currencies.
+  currency       String                @default("USD")
+  status         TransferRequestStatus @default(NEW)
+  locale         Locale                @default(en)
+  archivedAt     DateTime?
+  createdAt      DateTime              @default(now())
+  updatedAt      DateTime              @updatedAt
+  vehicle        TransferVehicle       @relation(fields: [vehicleId], references: [id])
+  fromLocation   TransferLocation      @relation("TransferRequestFrom", fields: [fromLocationId], references: [id])
+  toLocation     TransferLocation      @relation("TransferRequestTo", fields: [toLocationId], references: [id])
+
+  @@index([status])
+  @@index([pickupDate])
+  @@index([createdAt])
+}
+
+model Guide {
+  id                 String            @id @default(cuid())
+  name               String
+  languages          String[]
+  contact            String?
+  availabilityStatus GuideAvailability @default(AVAILABLE)
+  archivedAt         DateTime?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  assignments        Assignment[]
+}
+
+model Vehicle {
+  id          String        @id @default(cuid())
+  name        String
+  capacity    Int
+  type        String
+  status      VehicleStatus @default(ACTIVE)
+  archivedAt  DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  assignments Assignment[]
+}
+
+model Assignment {
+  id            String    @id @default(cuid())
+  leadId        String    @unique
+  guideId       String?
+  vehicleId     String?
+  scheduledDate DateTime?
+  archivedAt    DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  guide         Guide?    @relation(fields: [guideId], references: [id])
+  lead          Lead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  vehicle       Vehicle?  @relation(fields: [vehicleId], references: [id])
+
+  @@index([guideId])
+  @@index([vehicleId])
+}
+
+/// Lead auto-routing rules (Addendum §2). Evaluated top-down; first match wins.
+model AssignmentRule {
+  id         String   @id @default(cuid())
+  name       String
+  field      String
+  operator   String
+  value      String
+  assigneeId String
+  enabled    Boolean  @default(true)
+  order      Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  assignee   User     @relation("RuleAssignee", fields: [assigneeId], references: [id])
+
+  @@index([order])
+}
+
+model User {
+  id                    String              @id @default(cuid())
+  name                  String?
+  email                 String              @unique
+  emailVerified         DateTime?
+  image                 String?
+  passwordHash          String?
+  role                  Role                @default(SALES_ADMIN)
+  archivedAt            DateTime?
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+  accounts              Account[]
+  assignmentRuleTargets AssignmentRule[]    @relation("RuleAssignee")
+  auditLogs             AuditLog[]
+  assignedLeads         Lead[]              @relation("LeadAssignee")
+  communications        LeadCommunication[]
+  leadNotes             LeadNote[]
+  notifications         Notification[]
+  sessions              Session[]
+  settingsFallback      Settings[]          @relation("SettingsFallback")
+
+  @@index([role])
+}
+
+model Media {
+  id         String    @id @default(cuid())
+  path       String    @unique
+  /**
+   * Small cover-cropped WebP used by grids and the media picker; null on assets predating thumbnails.
+   */
+  thumbPath  String?
+  type       String
+  alt        String
+  width      Int?
+  height     Int?
+  /**
+   * Stored file size in bytes (the processed WebP, not the original upload).
+   */
+  bytes      Int?
+  format     String?
+  archivedAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([type])
+  @@index([createdAt])
+}
+
+model AuditLog {
+  id           String          @id @default(cuid())
+  actorId      String?
+  actionType   AuditActionType
+  resourceType String
+  resourceId   String
+  metadata     Json?
+  createdAt    DateTime        @default(now())
+  actor        User?           @relation(fields: [actorId], references: [id])
+
+  @@index([resourceType, resourceId])
+  @@index([actorId])
+  @@index([createdAt])
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  userId    String
+  event     String
+  title     String
+  body      String?
+  linkUrl   String?
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt])
+}
+
+/// Global settings singleton (Addendum §5): default currency, notification & routing config.
+model Settings {
+  id                           String   @id @default(cuid())
+  /// ISO 4217 code; must be one of `currencies`.
+  defaultCurrency              String   @default("USD")
+  /// The currencies offered across the console (Super Admin manages this list).
+  currencies                   String[] @default(["USD", "EUR", "GBP"])
+  allowPerLeadCurrencyOverride Boolean  @default(true)
+  fallbackAssigneeId           String?
+  createdAt                    DateTime @default(now())
+  updatedAt                    DateTime @updatedAt
+  fallbackAssignee             User?    @relation("SettingsFallback", fields: [fallbackAssigneeId], references: [id])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum Locale {
+  en
+  ar
+  de
+  ru
+  tr
+  fr
+  it
+}
+
+enum Role {
+  SUPER_ADMIN
+  SALES_ADMIN
+  CONTENT_ADMIN
+  OPERATIONS_ADMIN
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  NEGOTIATING
+  CONFIRMED
+  CANCELLED
+}
+
+enum TransferRequestStatus {
+  NEW
+  CONTACTED
+  CONFIRMED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  UNPAID
+  DEPOSIT_PAID
+  PAID_IN_FULL
+}
+
+enum TourStatus {
+  ACTIVE
+  DISABLED
+  ARCHIVED
+}
+
+enum DiscountType {
+  FIXED
+  PERCENT
+}
+
+// Quick Facts (tour detail) — structured values so display text localizes via
+// the UI string catalogs instead of per-tour translation rows (§5/§7).
+enum PickupType {
+  HOTEL_INCLUDED
+  AIRPORT_AVAILABLE
+  MEETING_POINT
+  NOT_INCLUDED
+}
+
+enum CancellationPolicy {
+  FREE_24H
+  FREE_48H
+  FREE_72H
+  NON_REFUNDABLE
+}
+
+/// Where a review was originally received (admin records this manually in V1).
+enum ReviewSource {
+  WEBSITE
+  GOOGLE
+  WHATSAPP
+  EMAIL
+  FACEBOOK
+  OTHER
+}
+
+enum GuideAvailability {
+  AVAILABLE
+  BUSY
+  UNAVAILABLE
+}
+
+enum VehicleStatus {
+  ACTIVE
+  MAINTENANCE
+  INACTIVE
+}
+
+enum AuditActionType {
+  CREATE
+  UPDATE
+  DELETE
+  STATUS_CHANGE
+  ASSIGNMENT_CHANGE
+}

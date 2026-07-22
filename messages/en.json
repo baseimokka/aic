@@ -1,0 +1,511 @@
+{
+  "brand": {
+    "name": "AIC Travel",
+    "partner": "SoHolidays",
+    "partnership": "In partnership with SoHolidays",
+    "partnerRole": "Official Tourism Partner"
+  },
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "tailorMade": "Tailor-Made Tours",
+    "destinations": "Destinations",
+    "transfers": "Transfers",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "transfers": {
+    "title": "Private Transfers",
+    "metaDescription": "Book a private airport or hotel transfer in Hurghada and the Red Sea region. Fixed prices per vehicle, modern fleet, request in minutes — no online payment.",
+    "subtitle": "Comfortable private transfers between airports, hotels and resorts — fixed prices per vehicle, confirmed personally by our team.",
+    "formTitle": "Request a transfer",
+    "formSubtitle": "Choose your route and vehicle — we confirm availability and pickup details personally.",
+    "from": "Pickup from",
+    "to": "Drop-off",
+    "vehicle": "Vehicle",
+    "seats": "seats",
+    "passengers": "Passengers",
+    "pickupDate": "Pickup date",
+    "notes": "Notes",
+    "notesPlaceholder": "Flight number, hotel name, arrival time…",
+    "selectOption": "Select…",
+    "price": "Transfer price",
+    "priceNote": "Per vehicle, not per person.",
+    "priceOnRequest": "Price on request",
+    "submit": "Request transfer",
+    "invalidPickupDate": "Choose a valid pickup date, today or later.",
+    "sameLocations": "Pickup and drop-off must be different.",
+    "routeUnavailable": "This route is no longer available — please choose another option or reach us on WhatsApp.",
+    "successTitle": "Transfer request received.",
+    "successBody": "Our team will contact you shortly to confirm your pickup time, meeting point, and payment arrangements.",
+    "point1Title": "Door to door",
+    "point1Body": "Your driver meets you at the airport or hotel and takes you straight to your destination — no detours, no waiting.",
+    "point2Title": "Fixed prices",
+    "point2Body": "Transparent prices per vehicle, set in advance — no hidden costs, no surprises.",
+    "point3Title": "Modern fleet",
+    "point3Body": "Air-conditioned, well-maintained vehicles in every size — from private cars to full-size buses."
+  },
+  "tailorMade": {
+    "title": "Tailor-Made Tours",
+    "metaDescription": "Design your own private Egypt itinerary. Tell AIC Travel your interests, pace and budget and receive a personalised trip plan — no online payment, no obligation.",
+    "lead": "Your journey, your way. Tell us what you love, and we'll design a personalised itinerary just for you — from must-see sights to hidden gems, tailored to your interests, pace, and budget.",
+    "formTitle": "Design your trip",
+    "formSubtitle": "Tell us your details and ideas — a travel advisor replies with a personalised plan.",
+    "styleLabel": "Who's travelling?",
+    "styles": {
+      "solo": "Solo",
+      "couple": "Couple",
+      "family": "Family",
+      "group": "Group"
+    },
+    "durationLabel": "Duration",
+    "durationAny": "Not sure yet",
+    "durationDay": "day",
+    "durationDays": "days",
+    "duration15Plus": "15+ days",
+    "tripLabel": "Describe your ideal trip",
+    "tripPlaceholder": "Sights you dream of seeing, activities you love, your pace, your budget — anything that helps us design your trip.",
+    "successNote": "Tailor-made trip request"
+  },
+  "actions": {
+    "requestBooking": "Request Booking",
+    "contactWhatsApp": "Contact via WhatsApp",
+    "explore": "Explore tours",
+    "viewAllTours": "View all tours",
+    "allDestinations": "All destinations",
+    "readBlog": "Read the blog",
+    "clearFilters": "Clear filters",
+    "submit": "Submit request"
+  },
+  "home": {
+    "heroTitle": "Discover Egypt, thoughtfully curated.",
+    "heroSubtitle": "Handcrafted journeys along the Nile and through Cairo, Luxor and the Red Sea — request a booking and our team tailors every detail.",
+    "ctaExplore": "Explore tours"
+  },
+  "homeExtra": {
+    "heroEyebrow": "Egypt · Curated journeys",
+    "heroSearch": "Search destinations or tours",
+    "search": "Search",
+    "featuredEyebrow": "Handpicked",
+    "exploreAll": "Explore all",
+    "toursSuffix": "tours",
+    "heroPrev": "Previous banner",
+    "heroNext": "Next banner",
+    "heroGoto": "Go to banner"
+  },
+  "tourCard": {
+    "from": "from",
+    "perPerson": "per person",
+    "originalPrice": "Original price",
+    "percentOff": "{percent}% off",
+    "days": "days",
+    "dayOne": "day",
+    "dayTwo": "days",
+    "dayFew": "days",
+    "dayMany": "days",
+    "viewDetails": "View details",
+    "rating": "Rated {rating} out of 5 from {count} reviews"
+  },
+  "reviews": {
+    "title": "Traveler reviews",
+    "countOne": "{count} review",
+    "countMany": "{count} reviews",
+    "ratingOutOf": "{rating} out of 5",
+    "travelledIn": "Travelled {date}",
+    "starOne": "{count} star",
+    "starMany": "{count} stars",
+    "featuredHeading": "What travelers say"
+  },
+  "whyUs": {
+    "points": [
+      {
+        "title": "Local expertise",
+        "body": "Egyptologist guides and a team that knows every site first-hand."
+      },
+      {
+        "title": "Honest pricing",
+        "body": "Clear quotes with no hidden fees — you approve every detail before you travel."
+      },
+      {
+        "title": "Always reachable",
+        "body": "WhatsApp and phone support before, during and after your journey."
+      },
+      {
+        "title": "Seven languages",
+        "body": "EN, AR, DE, RU, FR, IT, TR — with full right-to-left support."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Premium curated journeys across Egypt.",
+    "explore": "Explore",
+    "company": "Company",
+    "talk": "Talk to us",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "rights": "All rights reserved."
+  },
+  "social": {
+    "followUs": "Follow us"
+  },
+  "catalog": {
+    "title": "Tours",
+    "heading": "Egypt tours & experiences",
+    "searchPlaceholder": "Search tours or destinations",
+    "search": "Search",
+    "filters": "Filters",
+    "category": "Category",
+    "destination": "Destination",
+    "type": "Tour type",
+    "duration": "Duration",
+    "price": "Price range",
+    "suitability": "Good for",
+    "family": "Families",
+    "couple": "Couples",
+    "solo": "Solo",
+    "any": "Any",
+    "sort": "Sort by",
+    "sortFeatured": "Featured",
+    "sortPopular": "Most popular",
+    "sortPriceAsc": "Price: low to high",
+    "sortPriceDesc": "Price: high to low",
+    "sortDuration": "Duration",
+    "clear": "Clear filters",
+    "resultsOne": "tour",
+    "resultsMany": "tours",
+    "noResultsTitle": "No tours match your filters",
+    "noResultsBody": "Try widening your search or clearing some filters.",
+    "durationDay": "Day trip",
+    "durationShort": "2–3 days",
+    "durationWeek": "4–7 days",
+    "durationLong": "8+ days",
+    "minPrice": "Min",
+    "maxPrice": "Max",
+    "pagePrev": "Previous",
+    "pageNext": "Next",
+    "pageStatus": "Page {current} of {total}",
+    "showMore": "Show more",
+    "showLess": "Show less"
+  },
+  "detail": {
+    "overview": "Overview",
+    "itinerary": "Itinerary",
+    "included": "What's included",
+    "excluded": "Not included",
+    "faq": "Frequently asked questions",
+    "related": "You might also like",
+    "duration": "Duration",
+    "tourType": "Tour type",
+    "goodFor": "Good for",
+    "from": "from",
+    "days": "days",
+    "dayOne": "day",
+    "dayTwo": "days",
+    "dayFew": "days",
+    "dayMany": "days",
+    "perPerson": "per person",
+    "originalPrice": "Original price",
+    "percentOff": "{percent}% off",
+    "noPayment": "No payment now · we confirm availability first",
+    "reviews": "reviews",
+    "backToTours": "All tours",
+    "highlights": "Highlights",
+    "quickFacts": "Quick facts",
+    "pickup": "Pickup",
+    "languages": "Languages",
+    "cancellation": "Cancellation",
+    "pickupOptions": {
+      "HOTEL_INCLUDED": "Hotel pickup included",
+      "AIRPORT_AVAILABLE": "Airport pickup available",
+      "MEETING_POINT": "Meet at the starting point",
+      "NOT_INCLUDED": "Pickup not included"
+    },
+    "cancellationOptions": {
+      "FREE_24H": "Free cancellation up to 24 hours",
+      "FREE_48H": "Free cancellation up to 48 hours",
+      "FREE_72H": "Free cancellation up to 72 hours",
+      "NON_REFUNDABLE": "Non-refundable"
+    },
+    "gallery": {
+      "title": "Photo gallery",
+      "viewAll": "View all photos",
+      "photos": "photos",
+      "open": "Open fullscreen",
+      "close": "Close",
+      "previous": "Previous photo",
+      "next": "Next photo"
+    }
+  },
+  "booking": {
+    "title": "Request this tour",
+    "subtitle": "Tell us your details and our team will confirm availability and pricing.",
+    "fullName": "Full name",
+    "email": "Email",
+    "phone": "Phone number",
+    "country": "Country",
+    "date": "Preferred travel date",
+    "adults": "Adults",
+    "children": "Children",
+    "hotelName": "Hotel name",
+    "roomNumber": "Room number",
+    "optional": "optional",
+    "decrease": "Decrease",
+    "increase": "Increase",
+    "requests": "Special requests",
+    "consent": "I agree to be contacted about my request.",
+    "submit": "Submit request",
+    "sending": "Sending…",
+    "successTitle": "Thank you for your request.",
+    "successBody": "Our team will contact you shortly to confirm availability, pricing, and payment arrangements.",
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "consentRequired": "Please agree to be contacted.",
+    "step": "Step 1 of 1 · No payment",
+    "selectedTour": "Selected tour",
+    "securityNote": "Protected by spam filtering · validated securely",
+    "reference": "Reference",
+    "backToTours": "Back to tours",
+    "chatNow": "Chat with us now",
+    "challengeLabel": "I'm not a robot",
+    "challengeVerified": "Verified",
+    "challengeError": "Verification expired — please tick the box again.",
+    "challengeRequired": "Please confirm you're not a robot.",
+    "throttleTitle": "Too many attempts",
+    "throttleBody": "You've reached the limit for now — please wait before trying again, or message us on WhatsApp for an instant reply.",
+    "throttleCountdown": "You can try again in",
+    "whatsappFallback": "Message us on WhatsApp",
+    "errorGeneric": "Something went wrong — your request wasn't sent. Please try again.",
+    "invalidDate": "Choose a valid travel date, today or later.",
+    "tourUnavailable": "This tour is no longer available. Please browse our other tours or reach us on WhatsApp.",
+    "totalPrice": "Total price",
+    "originalPrice": "Original price",
+    "phoneWhatsAppNote": "Please use a phone number that is active on WhatsApp."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We're here to help plan your journey — reach us whichever way you prefer.",
+    "whatsapp": "WhatsApp",
+    "whatsappDesc": "Fastest response — chat with our team.",
+    "email": "Email",
+    "phone": "Phone",
+    "formTitle": "Send us a message",
+    "name": "Full name",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Message sent.",
+    "successBody": "Thank you — our team will reply within one business day.",
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "consent": "I agree to be contacted about my enquiry.",
+    "consentRequired": "Please agree to be contacted.",
+    "challengeLabel": "I'm not a robot",
+    "challengeVerified": "Verified",
+    "challengeError": "Verification expired — please tick the box again.",
+    "challengeRequired": "Please confirm you're not a robot.",
+    "throttleTitle": "Too many attempts",
+    "throttleBody": "You've reached the limit for now — please wait before trying again, or message us on WhatsApp for an instant reply.",
+    "throttleCountdown": "You can try again in",
+    "whatsappFallback": "Message us on WhatsApp",
+    "errorGeneric": "Something went wrong — your request wasn't sent. Please try again."
+  },
+  "about": {
+    "title": "About AIC Travel & SoHolidays",
+    "metaDescription": "AIC Travel is a Hurghada-based Egyptian tour operator founded in 2018, crafting tailor-made tours, private excursions and transfers across Egypt — in partnership with SoHolidays.",
+    "heroAlt": "Sunlit hieroglyph-covered columns of an ancient Egyptian temple",
+    "lead": "A premium Egyptian tour operator crafting unhurried, expertly guided journeys — in partnership with SoHolidays, our official tourism partner.",
+    "storyTitle": "Our story",
+    "storyParagraphs": [
+      "AIC Travel was founded in 2018 in Hurghada, on Egypt's Red Sea coast. It began with a simple passion — sharing the beauty, culture and history of Egypt with the world — and grew into a team crafting tailor-made tours, private excursions and transfers across the country.",
+      "Since then, we have welcomed travellers from across the globe, guiding them through the golden sands of the Red Sea, the ancient temples of Luxor, the majestic pyramids of Giza and the colourful streets of Cairo.",
+      "We believe travel is not just about visiting places — it's about creating memories. Every journey is designed around your interests, your pace and your style, with travel experts, licensed guides and professional drivers ensuring comfort and safety at every step."
+    ],
+    "servicesTitle": "What we do",
+    "servicesLead": "One local partner for the whole journey — from the first idea to the last transfer.",
+    "services": [
+      {
+        "title": "Tailor-made tours",
+        "body": "Private itineraries designed around your interests, pace and budget — from must-see sights to hidden gems."
+      },
+      {
+        "title": "Airport transfers",
+        "body": "Airport pickups, hotel drop-offs and city-to-city rides across Egypt, one-way or return."
+      },
+      {
+        "title": "Hotel reservations",
+        "body": "Help choosing and booking the right stay across Egypt's destinations."
+      },
+      {
+        "title": "Flight booking",
+        "body": "Assistance with airline tickets and flexible options for your route."
+      },
+      {
+        "title": "Visa assistance",
+        "body": "Guidance through Egypt's visa process and the documents to prepare before you fly."
+      },
+      {
+        "title": "SIM cards",
+        "body": "Local SIM cards with data and calling options, ready when you arrive."
+      }
+    ],
+    "whyTitle": "Why travel with us",
+    "whyLead": "What travelling with a local operator actually means.",
+    "why": [
+      {
+        "title": "Based in Hurghada",
+        "body": "A local team on Egypt's Red Sea coast — we live in the places you travel to."
+      },
+      {
+        "title": "Licensed tour guides",
+        "body": "Tours led by licensed guides who know Egypt's history and sites first-hand."
+      },
+      {
+        "title": "Professional drivers",
+        "body": "Comfortable private vehicles — limousine, minibus or coach — with professional drivers at the wheel."
+      },
+      {
+        "title": "Tailored itineraries",
+        "body": "Every journey, personalised just for you."
+      },
+      {
+        "title": "Multilingual team",
+        "body": "We look after guests in several languages — from English and German to Italian and Russian."
+      },
+      {
+        "title": "24/7 assistance",
+        "body": "Need help? Our support team is reachable around the clock — before and during your trip."
+      }
+    ],
+    "howTitle": "How it works",
+    "howLead": "Booking is a request, not a checkout — a personal process with no online payment.",
+    "steps": [
+      {
+        "title": "Send your travel request",
+        "body": "Choose a tour or describe the trip you have in mind — it takes a minute and costs nothing."
+      },
+      {
+        "title": "Speak with a travel advisor",
+        "body": "A real person replies to talk through dates, details and questions."
+      },
+      {
+        "title": "Receive your personalised itinerary",
+        "body": "We shape the plan around you and confirm availability and pricing."
+      },
+      {
+        "title": "Confirm your booking",
+        "body": "Approve the final plan together with your advisor — no payment is taken online."
+      },
+      {
+        "title": "Enjoy your trip",
+        "body": "Meet your guide and driver and discover Egypt, with our team reachable throughout."
+      }
+    ],
+    "ctaTitle": "Start planning your journey",
+    "ctaBody": "Tell us what you'd love to see — we'll design the rest."
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms & Conditions",
+    "lastUpdated": "Last updated",
+    "privacyIntro": "This policy explains what personal data AIC Travel collects through the booking-request and contact forms, how it is used and stored, and how to request access or deletion.",
+    "termsIntro": "These terms govern your use of the AIC Travel website and the booking-request process. Bookings are requests only — no payment is taken online in Phase 1."
+  },
+  "cookie": {
+    "title": "We value your privacy",
+    "message": "We use cookies to improve your experience and measure site traffic. Analytics load only with your consent.",
+    "accept": "Accept all",
+    "reject": "Reject",
+    "learnMore": "Privacy Policy"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "home": "Back to homepage",
+    "tours": "Browse tours"
+  },
+  "destinationsPage": {
+    "title": "Destinations",
+    "subtitle": "Where our travellers love to go.",
+    "toursIn": "Tours in",
+    "noTours": "Tours for this destination are coming soon.",
+    "explore": "Explore"
+  },
+  "blog": {
+    "title": "Travel Journal",
+    "subtitle": "Guides and tips for your Egyptian journey.",
+    "searchPlaceholder": "Search articles",
+    "search": "Search",
+    "readMore": "Read more",
+    "noPosts": "No articles found.",
+    "backToBlog": "All articles",
+    "featuredLabel": "Featured"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Answers to the questions we hear most.",
+    "items": [
+      {
+        "q": "Do I need a visa to visit Egypt?",
+        "a": "Most nationalities can obtain an e-visa or a visa on arrival. We advise based on your passport when you book."
+      },
+      {
+        "q": "Is it safe to travel in Egypt?",
+        "a": "Yes. We operate in well-established tourist areas with vetted guides and drivers, and our team is reachable throughout your trip."
+      },
+      {
+        "q": "When is the best time to visit?",
+        "a": "October to April offers the most comfortable temperatures for sightseeing and Nile cruises."
+      },
+      {
+        "q": "How do I pay?",
+        "a": "You send a booking request and our team confirms availability and pricing — no payment is taken online in Phase 1."
+      },
+      {
+        "q": "Can tours be customised?",
+        "a": "Absolutely. Every itinerary is a starting point; tell us your preferences in the request and we tailor it."
+      },
+      {
+        "q": "What's included in the price?",
+        "a": "Each tour lists exactly what's included and excluded on its page — typically transfers, guiding and entrance fees."
+      }
+    ]
+  },
+  "experiences": {
+    "title": "Experiences",
+    "subtitle": "Browse Egypt by the kind of journey you're dreaming of."
+  },
+  "partners": {
+    "title": "Our Partners",
+    "lead": "AIC Travel works with trusted partners to deliver a seamless, premium experience.",
+    "soholidaysTitle": "SoHolidays — Official Tourism Partner",
+    "soholidays": "SoHolidays is our official tourism partner, bringing on-the-ground operational strength across Egypt to every AIC Travel journey."
+  },
+  "guidesPage": {
+    "title": "Our Guides",
+    "subtitle": "Egyptologists and licensed guides who bring every site to life.",
+    "languages": "Languages",
+    "available": "Available"
+  },
+  "transportPage": {
+    "title": "Transportation",
+    "subtitle": "A modern, well-maintained fleet for comfortable travel.",
+    "capacity": "Capacity",
+    "seats": "seats"
+  },
+  "states": {
+    "noResults": "No tours match your search.",
+    "empty": "Nothing here yet."
+  },
+  "meta": {
+    "phase0Note": "Phase 0 foundation — design system, i18n and the data layer are being wired."
+  },
+  "tourTypes": {
+    "Day tour": "Day tour",
+    "Multi-day": "Multi-day",
+    "Sea trip": "Sea trip",
+    "Diving": "Diving",
+    "Safari": "Safari"
+  }
+}
