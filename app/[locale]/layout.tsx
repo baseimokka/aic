@@ -33,7 +33,7 @@ export default async function LocaleLayout({
   if (!isLocale(locale)) notFound();
 
   return (
-    <html lang={locale} dir={dir(locale)} className="h-full">
+    <html lang={locale} dir={dir(locale)} className="h-full overflow-x-clip">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

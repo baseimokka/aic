@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import type { HeroSlideData } from "@/lib/db/queries";
@@ -86,6 +86,33 @@ export function HeroCarousel({
 
   const go = useCallback((i: number) => setIndex(((i % count) + count) % count), [count]);
 
+  // Touch swipe (mobile) — a horizontal drag past the threshold moves one slide.
+  // We only act when the gesture is predominantly horizontal, so a vertical
+  // scroll through the hero is never hijacked. RTL-aware: swiping toward the
+  // page's start edge advances, matching the arrows' direction.
+  const SWIPE_THRESHOLD = 48; // px
+  const touch = useRef<{ x: number; y: number } | null>(null);
+  const rtl = typeof document !== "undefined" && document.dir === "rtl";
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touch.current = { x: t.clientX, y: t.clientY };
+  }, []);
+  const onTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      const start = touch.current;
+      touch.current = null;
+      if (!start || count <= 1) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - start.x;
+      const dy = t.clientY - start.y;
+      if (Math.abs(dx) < SWIPE_THRESHOLD || Math.abs(dx) <= Math.abs(dy)) return;
+      // Swipe left (dx<0) → next in LTR; mirrored in RTL.
+      const forward = rtl ? dx > 0 : dx < 0;
+      go(index + (forward ? 1 : -1));
+    },
+    [go, index, count, rtl],
+  );
+
   // Auto-advance — paused on hover/focus and under prefers-reduced-motion.
   useEffect(() => {
     if (count <= 1 || paused || reduced) return;
@@ -105,6 +132,8 @@ export function HeroCarousel({
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={() => setPaused(false)}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
       <ul className="absolute inset-0" aria-live={paused ? "polite" : "off"}>
         {slides.map((slide, i) => {
