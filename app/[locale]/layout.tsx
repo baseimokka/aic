@@ -43,7 +43,7 @@ export default async function LocaleLayout({
           href="https://fonts.googleapis.com/css2?family=Hanken+Grotesque:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
         />
       </head>
-      <body className="flex min-h-full flex-col bg-cream text-ink">{children}</body>
+      <body className="flex min-h-full flex-col overflow-x-clip bg-cream text-ink">{children}</body>
     </html>
   );
 }
